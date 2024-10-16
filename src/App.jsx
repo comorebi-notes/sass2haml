@@ -1,34 +1,30 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.sass'
 
 const App = () => {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
+    <main className="main">
+      <h1 className="title">
+        sass2haml
+      </h1>
+      <p className="description">
+        sass を元に haml のコードを生成します
       </p>
-    </>
+      <div className="forms">
+        <div className="forms__form">
+          <label className="forms__form__label forms__form__label--sass" htmlFor="form-sass">
+            sass
+          </label>
+          <textarea className="forms__form__textarea forms__form__textarea--sass" id="form-sass" placeholder=".hoge&#10;  &__fuga" />
+        </div>
+        <div className="forms__form">
+          <label className="forms__form__label forms__form__label--haml" htmlFor="form-haml">
+            haml
+          </label>
+          <textarea className="forms__form__textarea forms__form__textarea--haml" id="form-haml" placeholder=".hoge&#10;  .hoge__fuga"/>
+        </div>
+      </div>
+    </main>
   )
 }
 

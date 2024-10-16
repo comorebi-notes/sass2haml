@@ -3,7 +3,9 @@ import { createRoot } from 'react-dom/client'
 import App from './App.jsx'
 import './index.sass'
 
-createRoot(document.getElementById('root')).render(
+const renderTargetDom = document.querySelector('#root')
+
+createRoot(renderTargetDom).render(
   <StrictMode>
     <App />
   </StrictMode>
