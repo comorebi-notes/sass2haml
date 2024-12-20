@@ -25,9 +25,6 @@ const App = () => {
   useEffect(() => {
     try {
       const parsedSass = parser(sass)
-      console.log('===========================')
-      console.log(parsedSass)
-      console.log(renderHaml(parsedSass))
       setParsedHaml(renderHaml(parsedSass))
     } catch (e) {
       setParsedHaml(e.message)
@@ -40,7 +37,7 @@ const App = () => {
         sass2haml
       </h1>
       <p className="description">
-        Sass を元に Haml のコードを生成します
+        Sass のクラス名を Haml 用に変換します
       </p>
       <div className="forms">
         <div className="forms__form">
