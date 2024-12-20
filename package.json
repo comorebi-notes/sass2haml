@@ -12,7 +12,8 @@
   "dependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "sass": "^1.79.5"
+    "sass": "^1.79.5",
+    "textarea-code": "^4.0.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.11.1",
