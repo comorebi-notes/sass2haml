@@ -13,10 +13,13 @@ export const parser = (sass) => {
 
   lines.forEach((line) => {
     const indentLevel = line.match(/^\s*/)[0].length
-    const content = line.trim()
+    let content = line.trim()
     if (content === '') return
 
-    const node = new Node(nodeType(line), content)
+    content = content.split('//')[0].trim()
+    if (content === '') return
+
+    const node = new Node(nodeType(content), content)
     if (node.type === 'property') return
 
     while (stack.length > 1 && stack[stack.length - 1].indentLevel >= indentLevel) {
