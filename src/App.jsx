@@ -49,7 +49,7 @@ const App = () => {
             placeholder="(例)&#10;.hoge&#10;  &__fuga"
             value={sass}
             onChange={handleSrcChange}
-            padding={15}
+            padding={0}
             onKeyDown={(e) => {
               if (e.nativeEvent.isComposing) return false
             }}
