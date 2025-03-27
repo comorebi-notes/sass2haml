@@ -12,10 +12,10 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@uiw/react-textarea-code-editor": "^3.1.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "sass": "^1.79.5",
-    "textarea-code": "^4.0.1"
+    "sass": "^1.79.5"
   },
   "devDependencies": {
     "@eslint/js": "^9.11.1",

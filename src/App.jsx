@@ -1,9 +1,7 @@
 import { useState, useEffect } from 'react'
-import { TextAreaCodeElement } from 'textarea-code'
+import CodeEditor from '@uiw/react-textarea-code-editor'
 import { parser, renderHaml } from './utils/parser'
 import './App.sass'
-
-customElements.define('textarea-code', TextAreaCodeElement, { extends: 'textarea' })
 
 const App = () => {
   const [sass, setSass] = useState('')
@@ -44,14 +42,17 @@ const App = () => {
           <label className="forms__form__label forms__form__label--sass" htmlFor="form-sass">
             Sass
           </label>
-          <textarea
+          <CodeEditor
             id="form-sass"
-            class="forms__form__textarea forms__form__textarea--sass"
-            is="textarea-code"
-            tabStyle="spaces"
+            className="forms__form__textarea forms__form__textarea--sass"
+            language="scss"
             placeholder="(例)&#10;.hoge&#10;  &__fuga"
-            defaultValue={sass}
+            value={sass}
             onChange={handleSrcChange}
+            padding={15}
+            onKeyDown={(e) => {
+              if (e.nativeEvent.isComposing) return false
+            }}
           />
         </div>
         <div className="forms__form">

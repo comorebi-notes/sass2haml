@@ -1,7 +1,9 @@
-$body-bg-color:   #28282a
-$form-sass-color: #ff94e1
-$form-haml-color: #ffff94
-$body-color:      #fff
+$body-bg-color:           #28282a
+$form-sass-color:         #ff94e1
+$form-sass-comment-color: #94e1ff
+$form-haml-color:         #ffff94
+$body-color:              #fff
+$body-color-secondary:    rgb(255 255 255 / 50%)
 
 body
   background-color: $body-bg-color
@@ -66,8 +68,24 @@ body
       &--sass
         background-color: rgba($form-sass-color, .02)
         border-color: $form-sass-color
-        color: $form-sass-color
       &--haml
         background-color: rgba($form-haml-color, .02)
         border-color: $form-haml-color
         color: $form-haml-color
+
+[data-color-mode='dark']
+  .w-tc-editor
+    --color-fg-default: #{$form-sass-color}
+    //--color-canvas-subtle: #161b22
+    --color-prettylights-syntax-comment: #{$form-sass-comment-color}
+    //--color-prettylights-syntax-entity-tag: #7ee787
+    //--color-prettylights-syntax-entity: #d2a8ff
+    --color-prettylights-syntax-sublimelinter-gutter-mark: #{$body-color-secondary}
+    --color-prettylights-syntax-constant: #{$body-color-secondary}
+    //--color-prettylights-syntax-string: #a5d6ff
+    //--color-prettylights-syntax-keyword: #ff7b72
+    //--color-prettylights-syntax-markup-bold: #c9d1d9
+
+.w-tc-editor-preview.language-scss
+  .code-line:has(.token.punctuation)
+    color: $body-color-secondary
